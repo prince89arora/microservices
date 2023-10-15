@@ -8,3 +8,13 @@
 - Easy test automation to reduce testing cycle time.
 - Scaling and descaling is easier and can scale individual part of appliance in this case service. Less expensive.
 - Easy to keep different services secure an issue or 3rd party library can only affect 1 microservice.
+
+## Challenges
+
+- Network communication between modules/services. Services should be designed to minimize network latency. To reduce the network calls and provide data with minimum calls. Avoid chatty behavior.
+- Complex network scenarios to handle. Since state and data is distributed, need additional sophisticated failure handling approach. Need to have solutions depending on type of network issues. Example: Retry cannot be a solution when computation is an issue for a service.
+- Cascading failure, the type of failures that are happening because of other dependencies on the main service like API gateway failure.
+- Amplification Effects
+- Downtime and outage
+- Logging and debugging is harder in microservices since the flow is involving different microservices and distributed state. Observability is crucial.
+- Need to have robust automation like Tests, deployment, Monitoring and scaling.
